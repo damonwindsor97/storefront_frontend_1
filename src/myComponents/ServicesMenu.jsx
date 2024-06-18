@@ -1,0 +1,60 @@
+import React from 'react'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+
+  
+
+
+const services = [
+    {
+      title: 'Service 1',
+      description: 'Service of product 1',
+      price: '$20',
+      image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
+    },
+    {
+      title: 'Service 2',
+      description: 'Service of product 2',
+      price: '$25',
+        image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
+    },
+    {
+      title: 'Service 3',
+      description: 'Service of product 3',
+      price: '$59',
+      image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
+    },
+];
+
+function ServicesMenu() {
+  return (
+    <div>
+        <p className='text-start text-2xl font-semibold text-mainText'>Services</p>
+        <p className='text-start text-lg text-secondaryText'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ab.</p>
+
+        <div className='pt-5 w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+            {services.map(service =>
+            <Card className=" bg-cardBG hover:bg-zinc-900 border-accent text-white cursor-pointer transition-colors duration-500 ease-in-out">
+                <CardHeader>
+                    <p className='text-mainText'>{service.title}</p>
+                </CardHeader>
+                <CardContent>
+                    <img src={service.image} className='rounded md:h-48 md:w-full'/>
+                </CardContent>
+                <CardFooter className="">
+                    <p className='font-bold text-white m-auto text-lg'>{service.price} <span className='text-sm font-light'></span></p>
+                </CardFooter>
+            </Card>
+            )}
+        </div>
+    </div>
+  )
+}
+
+export default ServicesMenu

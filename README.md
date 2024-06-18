@@ -1,2 +1,3 @@
-# storefront_frontend
- Practice building a modern website
+## Frontend Shop
+
+Made to practice Modern Web Development
