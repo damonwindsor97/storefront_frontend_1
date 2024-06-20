@@ -21,17 +21,17 @@ function Footer() {
 
       <div className='flex text-start'>
         <ul className="flex flex-col mr-8">
-          <li className="font-bold text-xl mb-2 text-secondaryText">Index</li>
-          <li className='font-bold text-lg'>Products</li>
-          <li className='font-bold text-lg'>Services</li>
-          <li className='font-bold text-lg'>Guides</li>
-          <li className='font-bold text-lg'>Discord</li>
+          <li className=" text-xl mb-2 text-secondaryText">Index</li>
+          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Products</li>
+          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Services</li>
+          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Guides</li>
+          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Discord</li>
         </ul>
 
         <ul className="flex flex-col">
-          <li className="font-bold text-xl mb-2 text-secondaryText">Legal</li>
-          <li className='font-bold text-lg'>Terms of Service</li>
-          <li className='font-bold text-lg'>Privacy Policy</li>
+          <li className=" text-xl mb-2 text-secondaryText">Legal</li>
+          <li className='text-lg hover:text-secondaryText cursor-pointer'>Terms of Service</li>
+          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Privacy Policy</li>
         </ul>
       </div>
     </div>
