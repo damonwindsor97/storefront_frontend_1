@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Showcase from '../myComponents/Showcase'
-import ProductsMenu from '@/myComponents//products/ProductsMenu'
+import ProductsPreview from '@/myComponents//products/ProductsPreview'
 import ServicesMenu from '@/myComponents/ServicesMenu'
 import Banner from '@/myComponents/Banner'
 
@@ -9,11 +9,16 @@ function Home() {
   return (
     <div className=''>
       <div className=' animate animate-fadeIn'>
-        <Showcase/>
+        <Showcase
+          motto="highlighted text Lorem ipsum dolor sit amet." 
+          title="Main heading Lorem, ipsum. ipsum"
+          description="brief explanation Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consequatur quae nemo eum vero ratione placeat earum at excepturi cumque." 
+          subscribe={true}
+        />
       </div>
 
       <div className=' animate animate-fadeDown'>
-        <ProductsMenu/>
+        <ProductsPreview/>
       </div>
 
       <div className='mt-20 mb-20  animate animate-fadeDown'>

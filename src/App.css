@@ -41,11 +41,14 @@ html {
   }
 }
 
-#particles {
-  /* background-color: #0d0d0d;
+#particles-js {
+  background-color: #0d0d0d;
+  mask-image: linear-gradient(#0d0d0d, transparent);
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%; */
+  height: 540px;
+  width: 100%;
+  z-index: -1;
 }
+

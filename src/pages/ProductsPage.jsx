@@ -1,8 +1,11 @@
 
+import ProductsMenu from "@/myComponents/products/ProductsMenu"
 
 function ProductsPage() {
   return (
-    <div>ProductsPage</div>
+    <div>
+      <ProductsMenu/>
+    </div>
   )
 }
 
