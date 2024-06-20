@@ -12,7 +12,7 @@ function Home() {
         <Showcase
           motto="highlighted text Lorem ipsum dolor sit amet." 
           title="Main heading Lorem, ipsum. ipsum"
-          description="brief explanation Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consequatur quae nemo eum vero ratione placeat earum at excepturi cumque." 
+          description="Perfect Website to Link to Sellix! Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi consequatur quae nemo eum vero ratione placeat earum at excepturi cumque." 
           subscribe={true}
         />
       </div>

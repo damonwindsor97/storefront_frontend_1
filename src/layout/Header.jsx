@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 
 function Header() {
 
@@ -15,7 +16,7 @@ function Header() {
   return (
     <nav className="bg-main fixed w-full z-20 top-0 start-0 md:backdrop-blur font-inter">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse ">
+        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse ">
           <img
             src="https://2015.pycon-au.org/img/logos/default-logo.png"
             className="h-8"
@@ -24,7 +25,7 @@ function Header() {
           <span className="self-center text-2xl font-semibold whitespace-nowrap text-white hover:text-teal-500">
             Store
           </span>
-        </a>
+        </Link>
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
             type="button"
@@ -64,31 +65,31 @@ function Header() {
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
             <li>
-              <a
-                href="/products"
+              <Link
+                to="/products"
                 className="block py-2 px-3 text-white md:text-lg bg-blue-700 md:rounded-lg md:bg-transparent md:text-neutral-400 md:hover:bg-neutral-900 active:bg-neutral-900"
                 aria-current="page"
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
               >
                 Products
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="block py-2 px-3 text-gray-900 md:text-lg rounded hover:bg-gray-100 md:rounded-lg  md:hover:bg-neutral-900 md:text-neutral-400"
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="https://discord.gg"
                 className="block py-2 px-3 text-gray-900 md:text-lg rounded hover:bg-gray-100 md:rounded-lg  md:hover:bg-neutral-900 md:text-neutral-400"
               >
                 Discord
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
