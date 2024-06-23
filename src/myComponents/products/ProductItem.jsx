@@ -9,7 +9,6 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
-
 function ProductItem({title, image, price}) {
   return (
     <Card className=" bg-cardBG hover:bg-zinc-900 border-accent text-white cursor-pointer transition-colors duration-500 ease-in-out">
