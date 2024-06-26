@@ -22,16 +22,5 @@ export default defineConfig({
       app: '@/app.js',
     },
   },
-  // Configure the HTML plugin to inject scripts and tags
-  build: {
-    // Ensure your `public/index.html` is the template
-    base: './', // Adjust according to your deployment needs
-    outDir: 'dist', // Specify your build output directory
-    assetsDir: '', // Keep assets in root of outDir
-    rollupOptions: {
-      input: {
-        main: path.resolve(__dirname, './index.html'),
-      },
-    },
-  },
+
 });
