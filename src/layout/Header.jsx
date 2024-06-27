@@ -77,7 +77,7 @@ function Header() {
             </li>
             <li>
               <Link
-                to="#"
+                to="/services"
                 className="block py-2 px-3 text-gray-900 md:text-lg rounded hover:bg-gray-100 md:rounded-lg  md:hover:bg-neutral-900 md:text-neutral-400"
               >
                 Services

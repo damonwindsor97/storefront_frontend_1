@@ -1,8 +1,8 @@
 import React from 'react'
 
 import Showcase from '../myComponents/Showcase'
-import ProductsPreview from '@/myComponents//products/ProductsPreview'
-import ServicesMenu from '@/myComponents/ServicesMenu'
+import ProductsPreview from '@/myComponents/products/ProductsPreview'
+import ServicesPreview from '@/myComponents/services/ServicesPreview'
 import Banner from '@/myComponents/Banner'
 
 function Home() {
@@ -22,7 +22,7 @@ function Home() {
       </div>
 
       <div className='mt-20 mb-20  animate animate-fadeDown'>
-        <ServicesMenu/>
+        <ServicesPreview/>
       </div>
 
       <div>

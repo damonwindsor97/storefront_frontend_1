@@ -32,7 +32,7 @@ const services = [
     },
 ];
 
-function ServicesMenu() {
+function ServicesPreview() {
   return (
     <div className=''>
       <div className='flex justify-between'>
@@ -62,4 +62,4 @@ function ServicesMenu() {
   )
 }
 
-export default ServicesMenu
+export default ServicesPreview
