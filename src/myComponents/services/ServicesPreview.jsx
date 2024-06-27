@@ -40,7 +40,9 @@ function ServicesPreview() {
           <p className='text-start text-2xl font-semibold text-mainText'>Services</p>
           <p className='text-start text-lg text-secondaryText'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, ab.</p>
         </div>
-        <Button className="flex md:h-10 bg-gray-300 hover:bg-gray-500 text-black">Explore All</Button>
+        <Link to="/services">
+          <Button className="flex md:h-10 bg-gray-300 hover:bg-gray-500 text-black">Explore All</Button>
+        </Link>
       </div>
 
         <div className='pt-5 w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
