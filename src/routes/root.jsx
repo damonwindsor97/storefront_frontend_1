@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 
 import { Toaster } from "@/components/ui/toaster"
 
+import ScrollToTop from '@/scripts/ScrollToTop'
 
 import Header from '../layout/Header'
 import Footer from '@/layout/Footer'
@@ -14,6 +15,7 @@ function root() {
     <div>
         <Header/>
         <Toaster />
+        <ScrollToTop/>
         <Outlet/>
         <Footer/>
     </div>
