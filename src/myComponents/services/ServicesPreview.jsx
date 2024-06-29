@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
+import ProductItem from '../products/ProductItem';
 
 import { Button } from '@/components/ui/button';
 
@@ -15,18 +8,21 @@ import { Link } from 'react-router-dom';
 
 const services = [
     {
+      productId: '667fc4e59daa4',
       title: 'Service 1',
       description: 'Service of product 1',
       price: '$20',
       image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
     },
     {
+      productId: '667fc4e59daa4',
       title: 'Service 2',
       description: 'Service of product 2',
       price: '$25',
         image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
     },
     {
+      productId: '667fc4e59daa4',
       title: 'Service 3',
       description: 'Service of product 3',
       price: '$59',
@@ -49,17 +45,13 @@ function ServicesPreview() {
 
         <div className='pt-5 w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
             {services.map(service =>
-            <Card className=" bg-cardBG hover:bg-zinc-900 border-accent text-white cursor-pointer transition-colors duration-500 ease-in-out">
-                <CardHeader>
-                    <p className='text-mainText'>{service.title}</p>
-                </CardHeader>
-                <CardContent>
-                    <img src={service.image} className='rounded md:h-48 md:w-full'/>
-                </CardContent>
-                <CardFooter className="">
-                    <p className='font-bold text-white m-auto text-lg'>{service.price} <span className='text-sm font-light'></span></p>
-                </CardFooter>
-            </Card>
+              <ProductItem
+                key={service.productId}
+                productId={service.productId}
+                title={service.title}
+                price={service.price}
+                image={service.image}
+              />
             )}
         </div>
     </div>
