@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { Input } from "@/components/ui/input"
-import { Button } from '@/components/ui/button'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -22,16 +21,16 @@ function Footer() {
       <div className='flex text-start'>
         <ul className="flex flex-col mr-8">
           <li className=" text-xl mb-2 text-secondaryText">Index</li>
-          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Products</li>
-          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Services</li>
-          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Guides</li>
-          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Discord</li>
+          <Link to="/products"><li className=' text-lg hover:text-secondaryText cursor-pointer'>Products</li></Link>
+          <Link to="/services"><li className=' text-lg hover:text-secondaryText cursor-pointer'>Services</li></Link>
+          <Link to=""><li className=' text-lg hover:text-secondaryText cursor-pointer'>Guides</li></Link>
+          <Link to="https://discord.gg"><li className=' text-lg hover:text-secondaryText cursor-pointer'>Discord</li></Link>
         </ul>
 
         <ul className="flex flex-col">
           <li className=" text-xl mb-2 text-secondaryText">Legal</li>
-          <li className='text-lg hover:text-secondaryText cursor-pointer'>Terms of Service</li>
-          <li className=' text-lg hover:text-secondaryText cursor-pointer'>Privacy Policy</li>
+          <Link><li className='text-lg hover:text-secondaryText cursor-pointer'>Terms of Service</li></Link>
+          <Link><li className=' text-lg hover:text-secondaryText cursor-pointer'>Privacy Policy</li></Link>
         </ul>
       </div>
     </div>
