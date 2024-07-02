@@ -5,8 +5,6 @@ function Header() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  const [activeTab, setActiveTab] = useState(0)
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
@@ -69,8 +67,6 @@ function Header() {
                 to="/products"
                 className="block py-2 px-3 text-white md:text-lg bg-blue-700 md:rounded-lg md:bg-transparent md:text-neutral-400 md:hover:bg-neutral-900 active:bg-neutral-900"
                 aria-current="page"
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
               >
                 Products
               </Link>

@@ -1,45 +1,47 @@
 import React from 'react'
 
+import axios from 'axios'
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import ProductItem from './ProductItem';
 
 import { Button } from '@/components/ui/button';
-  
-
-const products = [
-  {
-    productId: '667fbc4c339ee',
-    title: 'Product 1',
-    description: 'Description of product 1',
-    price: '$69',
-    image: "https://curie.pnnl.gov/sites/default/files/default_images/default-image_0.jpeg",
-  },
-  {
-    productId: '667fbc4c339ee',
-    title: 'Product 2',
-    description: 'Description of product 2',
-    price: '$69',
-    image: "https://curie.pnnl.gov/sites/default/files/default_images/default-image_0.jpeg"
-  },
-  {
-    productId: '667fbc4c339ee',
-    title: 'Product 3',
-    description: 'Description of product 3',
-    price: '$69',
-    image: "https://curie.pnnl.gov/sites/default/files/default_images/default-image_0.jpeg"
-  },
-  {
-    productId: '667fbc4c339ee',
-    title: 'Product 4',
-    description: 'Description of product 4',
-    price: '$69',
-    image: "https://curie.pnnl.gov/sites/default/files/default_images/default-image_0.jpeg"
-  },
-];
+import { ClipLoader } from 'react-spinners';
 
 
 function ProductsPreview() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
+
+  const options = {method: 'GET', headers: {Authorization: 'e7N2CtH9cJAoiLZQBHID0bN6VSfha47LieMtlV4Hm7WXSifsGLPFVtn9snItdpqs'}};
+
+  async function getProducts() {
+    try {
+      setLoading(true)
+      setError(false)
+      const response = await axios.get('https://dev.sellix.io/v1/groups/668024d11a942', options);
+      const data = response.data;
+
+      const productsData = data.data.group.products_bound
+
+      setProducts(productsData)
+      setLoading(false)
+    } catch (error) {
+      console.log('Error fetching products', error)
+      setError(true)
+      setLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  const productsToShow = products.slice(0, 4);
+
   return (
     <div className=''>
       <div className='flex justify-between '>
@@ -52,17 +54,25 @@ function ProductsPreview() {
         </Link>
       </div>
 
-        <div className='pt-5 w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
-            {products.map(product =>
-              <ProductItem
-                key={product.productId}
-                productId={product.productId}
-                title={product.title}
-                price={product.price}
-                image={product.image}
-              />
-            )}
+      {loading && (
+        <div className='pt-5 flex justify-center'>
+          <ClipLoader color='white' />
         </div>
+      )}
+
+      {!loading && (
+        <div className='pt-5 w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+          {productsToShow.map(product =>
+            <ProductItem
+              key={product.uniqid}
+              productId={product.uniqid}
+              title={product.title}
+              price={product.price}
+              cloudflare_image_id={product.cloudflare_image_id}
+            />
+          )}
+        </div>
+      )}
     </div>
   )
 }

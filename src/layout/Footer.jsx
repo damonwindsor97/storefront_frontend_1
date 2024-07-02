@@ -10,10 +10,10 @@ function Footer() {
       <div className='text-start'>
         <img src="https://2015.pycon-au.org/img/logos/default-logo.png" className="h-8 mb-6" alt="Logo"/>
         <p className='font-bold text-lg'>Get Notified</p>
-        <p className='text-secondaryText'>Stay updated with all our latest products, discounts or restocks</p>
+        <p className='text-sm md:text-base text-secondaryText'>Stay updated with all our latest products, discounts or restocks</p>
 
         <div className='flex mt-4'>
-          <input type="email" className="md:w-56 md:h-10 border-none focus:border-solid focus:border-white bg-neutral-800 rounded-l-lg px-2" placeholder="your@email.com" /> 
+          <input type="email" className="w-32 md:w-56 md:h-10 border-none focus:border-solid focus:border-white bg-neutral-800 rounded-l-lg px-2" placeholder="your@email.com" /> 
           <button className="ml-2 md:h-10 bg-neutral-300 hover:bg-neutral-500 text-black rounded-r-lg px-4">Subscribe</button>
         </div>
       </div>
@@ -21,16 +21,16 @@ function Footer() {
       <div className='flex text-start'>
         <ul className="flex flex-col mr-8">
           <li className=" text-xl mb-2 text-secondaryText">Index</li>
-          <Link to="/products"><li className=' text-lg hover:text-secondaryText cursor-pointer'>Products</li></Link>
-          <Link to="/services"><li className=' text-lg hover:text-secondaryText cursor-pointer'>Services</li></Link>
-          <Link to=""><li className=' text-lg hover:text-secondaryText cursor-pointer'>Guides</li></Link>
-          <Link to="https://discord.gg"><li className=' text-lg hover:text-secondaryText cursor-pointer'>Discord</li></Link>
+          <Link to="/products"><li className=' md:text-lg hover:text-secondaryText cursor-pointer'>Products</li></Link>
+          <Link to="/services"><li className=' md:text-lg hover:text-secondaryText cursor-pointer'>Services</li></Link>
+          <Link to=""><li className=' md:text-lg hover:text-secondaryText cursor-pointer'>Guides</li></Link>
+          <Link to="https://discord.gg"><li className=' md:text-lg hover:text-secondaryText cursor-pointer'>Discord</li></Link>
         </ul>
 
         <ul className="flex flex-col">
           <li className=" text-xl mb-2 text-secondaryText">Legal</li>
-          <Link><li className='text-lg hover:text-secondaryText cursor-pointer'>Terms of Service</li></Link>
-          <Link><li className=' text-lg hover:text-secondaryText cursor-pointer'>Privacy Policy</li></Link>
+          <Link><li className='md:text-lg hover:text-secondaryText cursor-pointer'>Terms of Service</li></Link>
+          <Link><li className=' md:text-lg hover:text-secondaryText cursor-pointer'>Privacy Policy</li></Link>
         </ul>
       </div>
     </div>

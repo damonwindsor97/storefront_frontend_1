@@ -12,16 +12,22 @@ import { Button } from '@/components/ui/button'
 
 
 
-function ProductItem({title, image, price, productId}) {
+function ProductItem({title, cloudflare_image_id, price, productId}) {
 
-    
+  // Sellix API provides base URL for Cloudflare images
+  const sellixBaseUrl = 'https://imagedelivery.net/95QNzrEeP7RU5l5WdbyrKw/';
+  const variantName = 'productImageCart'; 
+
+
+  const imageUrl = `${sellixBaseUrl}${cloudflare_image_id}/${variantName}`;
+
   return (
     <Card className=" bg-cardBG hover:bg-zinc-900 border-accent text-white cursor-pointer transition-colors duration-500 ease-in-out">
         <CardHeader>
             <p>{title}</p>
         </CardHeader>
         <CardContent>
-            <img src={image} className='rounded md:h-48 md:w-full'/>
+        <img src={imageUrl} className='rounded md:h-48 md:w-full' alt={title} />
         </CardContent>
         <CardFooter className="">
             <p className='font-bold text-white m-auto text-lg'>{price} <span className='text-sm font-light'>per month</span></p>

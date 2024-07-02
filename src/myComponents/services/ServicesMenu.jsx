@@ -1,56 +1,43 @@
 import React from 'react'
 
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+
 import ProductItem from '../products/ProductItem'
 import Showcase from '../Showcase'
-
-const services = [
-    {
-      productId: '667fc4e59daa4',
-      title: 'Service 1',
-      description: 'Service of product 1',
-      price: '$20',
-      image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
-    },
-    {
-      productId: '667fc4e59daa4',
-      title: 'Service 2',
-      description: 'Service of product 2',
-      price: '$25',
-        image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
-    },
-    {
-      productId: '667fc4e59daa4',
-      title: 'Service 3',
-      description: 'Service of product 3',
-      price: '$59',
-      image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
-    },
-    {
-      productId: '667fc4e59daa4',
-      title: 'Service 4',
-      description: 'Service of product 4',
-      price: '$20',
-      image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
-    },
-    {
-      productId: '667fc4e59daa4',
-      title: 'Service 5',
-      description: 'Service of product 5',
-      price: '$25',
-        image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
-    },
-    {
-      productId: '667fc4e59daa4',
-      title: 'Service 6',
-      description: 'Service of product 6',
-      price: '$59',
-      image: "https://apollobattery.com.au/wp-content/uploads/2022/08/default-product-image.png"
-    },
-];
+import { ClipLoader } from 'react-spinners'
 
 function ServicesMenu() {
+  const [services, setServices] = useState([])
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
+
+
+  const options = {method: 'GET', headers: {Authorization: 'e7N2CtH9cJAoiLZQBHID0bN6VSfha47LieMtlV4Hm7WXSifsGLPFVtn9snItdpqs'}};
+
+  async function getServices() {
+    try {
+      setLoading(true);
+      setError(false);
+
+      const response = await axios.get('https://dev.sellix.io/v1/groups/668024dad9415', options);
+      const data = response.data;
+
+      const servicesData = data.data.group.products_bound
+
+      setServices(servicesData);
+      setLoading(false)
+    } catch (error) {
+      setError(true)
+      console.log('Error fetching services', error)
+    }
+  }
+
+  useEffect(() => {
+    getServices();
+  }, []);
   return (
-<div>
+    <div>
         <Showcase
             motto=""
             title="Services"
@@ -65,17 +52,25 @@ function ServicesMenu() {
                 </div>
             </div>
 
-            <div className='pt-5 w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+            {loading && (
+              <div className='pt-5 flex justify-center'>
+                <ClipLoader color='white' />
+              </div>
+            )}
+
+            {!loading && (
+              <div className='pt-5 w-full grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
                 {services.map(service =>
-                <ProductItem
-                    key={service.productId}
-                    productId={service.productId}
+                  <ProductItem
+                    key={service.uniqid}
+                    productId={service.uniqid}
                     title={service.title}
                     price={service.price}
-                    image={service.image}
-                />
+                    cloudflare_image_id={service.cloudflare_image_id}
+                  />
                 )}
-            </div>
+              </div>
+            )}
         </div>
     </div>
   )
